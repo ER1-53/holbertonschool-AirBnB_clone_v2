@@ -6,10 +6,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
+@app.route("/", strict_slashes=False)
+def hello_HBNB():
     """Display sentence in web page"""
-    return "<p>Hello, World!</p>"
+    return "Hello HBNB!"
 
 if __name__ == '__main__':
     """execute this info only at script execution
