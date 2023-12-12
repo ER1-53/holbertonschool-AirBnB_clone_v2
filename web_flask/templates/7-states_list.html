@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>States</H1>
+		<UL>
+			{% for item in navigation %}
+			<li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+			{% endfor %}
+			<LI>State: <state.id>: <B><state.name></B></LI>
+		</UL>
+    </BODY>
+</HTML>

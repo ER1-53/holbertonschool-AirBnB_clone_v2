@@ -41,9 +41,10 @@ def display_page_if_intn(n):
 def even_odd(n):
     """display thml page if <n> is an integer"""
     if n % 2 == 0:
-        return render_template('6-number_odd_or_even.html', n=n, type='even')
+        result = 'even'
     elif n % 2 != 0:
-        return render_template('6-number_odd_or_even.html', n=n, type='odd')
+        result = 'odd'
+    return render_template('6-number_odd_or_even.html', n=n, result=result)
 
 if __name__ == '__main__':
     """execute this info only at script execution
