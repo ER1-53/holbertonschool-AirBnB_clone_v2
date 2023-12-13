@@ -3,15 +3,17 @@
 
 
 from models import storage
-from flask import Flask, render_template, abort
+from flask import Flask, render_template
 from markupsafe import escape
 from models.state import State
 app = Flask(__name__)
 
-@app.route("/states_list", strict_slashes=False)
+@app.route("/states_list_v2", strict_slashes=False)
 def states():
     """Display sentence in web page"""
-    return render_template('7-states_list.html', states=storage.all(State).values() )
+    states=storage.all(State).values()
+    sorted_state = sorted(states, key=lambda x: x.name) # le trie se fait dans le code python alors que dans l'autre version il se fait dans le html
+    return render_template('7-states_list_v2.html', states=sorted_state)
 
 @app.teardown_appcontext
 def free(exception):

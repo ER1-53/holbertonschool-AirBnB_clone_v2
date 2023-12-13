@@ -35,7 +35,7 @@ def only_n(n):
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def display_page_if_intn(n):
     """display thml page if <n> is an integer"""
-    return render_template('5-number.html', n=n)
+    return render_template('5-number.html', my_number=n)
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def even_odd(n):
@@ -44,7 +44,7 @@ def even_odd(n):
         result = 'even'
     elif n % 2 != 0:
         result = 'odd'
-    return render_template('6-number_odd_or_even.html', n=n, result=result)
+    return render_template('6-number_odd_or_even.html', my_number=n, result=result)
 
 if __name__ == '__main__':
     """execute this info only at script execution
