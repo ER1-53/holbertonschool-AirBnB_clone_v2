@@ -4,7 +4,7 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-        {% if not id %}
+        {% if id is none %}
             <H1>States</H1>
             <UL>
                 {% for state in html_states | sort(attribute='name') %}
@@ -19,6 +19,6 @@
                     <li>{{ city.id }}: <B>{{ city.name }}</B></li>
                 {% endfor %}
             </UL>
-        {% endfor %}
+        {% endif %}
     </BODY>
 </HTML>

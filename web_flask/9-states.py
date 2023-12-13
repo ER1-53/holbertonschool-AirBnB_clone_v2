@@ -1,26 +1,30 @@
 #!/usr/bin/python3
 """First flask web page """
-
-
 from models import storage
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 from models.state import State
 app = Flask(__name__)
 
+
 @app.teardown_appcontext
 def free(exception):
+    """use methode close for free"""
     storage.close()
+
 
 @app.route("/states", strict_slashes=False)
 @app.route("/states/<id>", strict_slashes=False)
-def states(id):
+def states(id=None):
     """Display sentence in web page"""
     states = storage.all(State).values()
-    if not id: 
-        return render_template('9-states.html', html_states=states)
+    if id is None:
+        return render_template('9-states.html', html_states=states, id=None)
+
     for state in states:
         if state.id == id:
             return render_template('9-states.html', state=state, state_id=id)
+    abort(404)
+
 
 if __name__ == '__main__':
     """execute this info only at script execution
