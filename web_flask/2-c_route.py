@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """First flask web page """
-from flask import Flask, abort, render_template
+from flask import Flask
 from markupsafe import escape
 app = Flask(__name__)
 
@@ -20,7 +20,7 @@ def HBNB():
 @app.route("/c/<name>", strict_slashes=False)
 def c_name(name):
     """display C and <name> in arg"""
-    return f"C {escape(name)}"
+    return "C {}".format(name)
 
 
 if __name__ == '__main__':
