@@ -27,7 +27,8 @@ def c_text(text):
 @app.route("/python/<text>", strict_slashes=False)
 def python_text(text):
     """display python and <text> in arg"""
-    return f"Python {escape(text)}"
+    text = text.replace('_', ' ')
+    return "Python {}".format(text)
 
 
 if __name__ == '__main__':

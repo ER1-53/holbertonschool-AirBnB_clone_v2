@@ -27,13 +27,14 @@ def c_text(text):
 @app.route("/python/<text>", strict_slashes=False)
 def python_text(text):
     """display python and <text> in arg"""
-    return f"Python {escape(text)}"
+    text = text.replace('_', ' ')
+    return "Python {}".format(text)
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def only_n(n):
     """display <n> if is an integer"""
-    return f"{escape(n)} is a number"
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':
