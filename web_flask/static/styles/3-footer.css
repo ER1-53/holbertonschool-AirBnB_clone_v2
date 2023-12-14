@@ -1,0 +1,17 @@
+footer {
+	height: 60px;
+	width: 100%;
+	background-color: white;
+	border-top: solid 1px #CCCCCC;
+}
+footer p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+p:first-child {
+	margin-bottom: 0;
+}
+p:nth-child(2) {
+	margin-top: 0;
+}
