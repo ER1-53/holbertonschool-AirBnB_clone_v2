@@ -11,6 +11,8 @@
                 <lI>{{ state.id }}: <B>{{ state.name }}</B></lI>
                 {% endfor %}
             </UL>
+        {% elif id==0 %}
+            <H1>Not found!</H1>
         {% else %}
             <H1>State: {{ state.name }}</H1>
             <H3>Cities:</H3>

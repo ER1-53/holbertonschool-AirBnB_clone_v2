@@ -22,7 +22,7 @@
                 <div class="list_nav_locations">
                     <ul class="popover">
                         {% for state in html_states | sort(attribute='name') %}
-			    <li>{{ state.name }}
+			    <li><b>{{ state.name }}</b>
                     <UL>
                         {% for city in state.cities | sort(attribute='name') %}
                             <li>{{ city.name }}</li>

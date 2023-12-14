@@ -23,7 +23,7 @@ def states(id=None):
     for state in states:
         if state.id == id:
             return render_template('9-states.html', state=state, state_id=id)
-    abort(404)
+    return render_template('9-states.html', id=0)
 
 
 if __name__ == '__main__':
